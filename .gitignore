@@ -1,0 +1,16 @@
+# Ignore temporary files
+*.tmp
+*.temp
+
+# Ignore build directories
+build/
+dist/
+img/
+
+# Ignore IDE files
+.idea/
+.vscode/
+
+# Ignore files with sensitive information
+credentials.txt
+img/
