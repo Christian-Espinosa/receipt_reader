@@ -6,6 +6,7 @@
 build/
 dist/
 img/
+env/
 
 # Ignore IDE files
 .idea/
@@ -13,4 +14,3 @@ img/
 
 # Ignore files with sensitive information
 credentials.txt
-img/
