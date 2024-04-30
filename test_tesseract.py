@@ -6,10 +6,26 @@ import numpy as np
 import matplotlib.pyplot as plt
 from PyPDF2 import PdfFileReader
 
+
+def read_pdf(pdf_file_path):
+    try:
+        with open(pdf_file_path, "rb") as file:
+            reader = PdfFileReader(file)
+            num_pages = reader.numPages
+            print(f"Number of pages: {num_pages}")
+
+            for page_num in range(num_pages):
+                page = reader.getPage(page_num)
+                text = page.extractText()
+                print(f"Page {page_num + 1}:")
+                print(text)
+    except Exception as e:
+        print(f"Error reading PDF: {e}")
+        
 def read_pdf_files(path):
     pdf_files = []
 
-    with open(path, 'rb') as file:
+    with open(path, 'w') as file:
         for line in file:
             pdf_files.append(line.strip())
 
@@ -23,9 +39,25 @@ def read_pdf_pages(pdf_file):
         image = np.array(page)
         pdf_images.append(image)
     return pdf_images
+from pdf2image import convert_from_path
+
+def pdf_to_image(pdf_file_path, output_folder_path):
+    try:
+        # Convert PDF to list of PIL.Image objects
+        images = convert_from_path(pdf_file_path)
+
+        # Save each image as a PNG file in the output folder
+        for i, image in enumerate(images):
+            image_path = f"{output_folder_path}/page_{i+1}.png"
+            image.save(image_path, "PNG")
+        print("PDF converted to images successfully.")
+    except Exception as e:
+        print(f"Error converting PDF to images: {e}")
+
 
 def main():
 
+    read_pdf(paths.img_path)
     l_pdfs = read_pdf_files(paths.img_path)
     l_imgs = read_pdf_pages(l_pdfs)
 
