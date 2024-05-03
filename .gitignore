@@ -6,6 +6,8 @@
 build/
 dist/
 img/
+img_output/
+img_processed/
 env/
 
 # Ignore IDE files
