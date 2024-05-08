@@ -1,12 +1,13 @@
 import os
 import cv2
-import pytesseract
 import paths
 from pdf2image import convert_from_path
 import numpy as np
 import matplotlib.pyplot as plt
 from PyPDF2 import PdfReader
 
+import pytesseract
+from PIL import Image
 
 def pdfs_to_images(pdf_folder_path, output_folder_path):
     try:
@@ -161,13 +162,14 @@ def main():
             save_images(processed_images, paths.processed_img_path)
             show_one_image(processed_images[0])
         elif option == "3":
-            text = perform_ocr(images)
-            print("OCR Result:")
+            print(pytesseract.get_tesseract_version())
+            image = Image.open(paths.processed_img_path + "\\p_image_1.png")
+            text = pytesseract.image_to_string(image)
             print(text)
         elif option == "e":
             break
         else:
-            print("Invalid option. Please try again.")
+            print("Opción Invalida. Intente de nuevo.")
 
 if __name__ == "__main__":
     main()
