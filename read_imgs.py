@@ -166,6 +166,8 @@ def main():
             image = Image.open(paths.processed_img_path + "\\p_image_1.png")
             text = pytesseract.image_to_string(image)
             print(text)
+            with open(paths.text_path + "p_image_1.txt", "w", encoding='utf-8') as file:
+                file.write(text)
         elif option == "e":
             break
         else:
