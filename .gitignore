@@ -17,3 +17,56 @@ env/
 # Ignore files with sensitive information
 credentials.txt
 paths.py
+
+# Miscellaneous
+*.class
+*.log
+*.pyc
+*.swp
+.DS_Store
+.atom/
+.buildlog/
+.history
+.svn/
+
+# IntelliJ related
+*.iml
+*.ipr
+*.iws
+.idea/
+
+# The .vscode folder should not be added to version control
+.vscode/
+
+# Flutter/Dart/Pub related
+frontend/**/doc/api/
+frontend/.dart_tool/
+frontend/.flutter-plugins
+frontend/.packages
+frontend/.pub-cache/
+frontend/.pub/
+frontend/**/build/
+
+# Web related
+frontend/lib/generated_plugin_registrant.dart
+
+# iOS related
+frontend/**/ios/.symlinks/
+frontend/**/ios/Flutter/.last_build_id
+frontend/**/ios/Flutter/App.framework
+frontend/**/ios/Flutter/Flutter.framework
+frontend/**/ios/Flutter/Flutter.podspec
+frontend/**/ios/Flutter/Generated.xcconfig
+frontend/**/ios/Flutter/app.flx
+frontend/**/ios/Flutter/app.zip
+frontend/**/ios/Flutter/flutter_assets/
+frontend/**/ios/ServiceDefinitions.json
+frontend/**/ios/Runner/GeneratedPluginRegistrant.*
+
+# Android related
+frontend/**/android/.gradle
+frontend/**/android/app/build/
+frontend/**/android/app/src/main/java/io/flutter/plugins/GeneratedPluginRegistrant.java
+
+# Exceptions to above rules.
+!/packages/flutter_tools/test/data/dart_dependencies_test/**/.packages
