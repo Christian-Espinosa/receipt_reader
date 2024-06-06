@@ -77,37 +77,37 @@ class _CameraScreenState extends State<CameraScreen> {
   }
 
   Future<void> _takePicture() async {
-  if (_controller == null || !_controller!.value.isInitialized || _isTakingPicture) {
-    return;
-  }
-  _isTakingPicture = true;
-  try {
-    final XFile file = await _controller!.takePicture();
-    if (file != null) {
-      setState(() {
-        _isPictureTaken = true;
-      });
-      // Removed await keyword to prevent UI freeze
-      Navigator.push(
-        context,
-        MaterialPageRoute(
-          builder: (context) => PictureScreen(
-            imageFile: File(file.path),
-            onRetake: () {
-              Navigator.pop(context);
-              setState(() {
-                _isPictureTaken = false;
-                _initializeCamera();
-              });
-            },
-          ),
-        ),
-      );
+    if (_controller == null || !_controller!.value.isInitialized || _isTakingPicture) {
+      return;
     }
-  } catch (e) {
-    print('Error taking picture: $e');
-  } finally {
-    _isTakingPicture = false;
+    _isTakingPicture = true;
+    try {
+      final XFile file = await _controller!.takePicture();
+      if (file != null) {
+        setState(() {
+          _isPictureTaken = true;
+        });
+        // Removed await keyword to prevent UI freeze
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => PictureScreen(
+              imageFile: File(file.path),
+              onRetake: () {
+                Navigator.pop(context);
+                setState(() {
+                  _isPictureTaken = false;
+                  _initializeCamera();
+                });
+              },
+            ),
+          ),
+        );
+      }
+    } catch (e) {
+      print('Error taking picture: $e');
+    } finally {
+      _isTakingPicture = false;
+    }
   }
-}
 }
