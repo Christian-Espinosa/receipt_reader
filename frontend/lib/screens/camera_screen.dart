@@ -1,8 +1,9 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
-import '../widgets/picture_review_screen.dart';
+import 'picture_review_screen.dart';
 import 'package:camera/camera.dart';
+import 'home_screen.dart';
 
 class CameraScreen extends StatefulWidget {
   @override
@@ -41,7 +42,43 @@ class _CameraScreenState extends State<CameraScreen> {
       setState(() {
         _image = image;
       });
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => PictureScreen(
+            imageFile: File(image.path),
+            onRetake: () {
+              Navigator.pop(context);
+              setState(() {
+                _isPictureTaken = false;
+                _initializeCamera();
+              });
+            },
+            onComplete: (extractedText) {
+              _showProcessingSnackbar();
+              Navigator.pop(context); // Navigate back to CameraScreen
+              Navigator.pop(context); // Navigate back to HomeScreen
+              _resetCamera();
+            },
+          ),
+        ),
+      );
     }
+  }
+
+  void _showProcessingSnackbar() {
+    final snackBar = SnackBar(
+      content: Text('Processing data...'),
+      duration: Duration(seconds: 2),
+    );
+    ScaffoldMessenger.of(context).showSnackBar(snackBar);
+  }
+
+  void _resetCamera() {
+    setState(() {
+      _isPictureTaken = false;
+    });
+    _initializeCamera();
   }
 
   @override
@@ -60,6 +97,8 @@ class _CameraScreenState extends State<CameraScreen> {
               child: FloatingActionButton(
                 backgroundColor: Colors.black.withOpacity(0.5),
                 onPressed: _takePicture,
+                tooltip: 'Take Picture',
+                child: Icon(Icons.camera_alt),
               ),
             ),
           ),
@@ -73,7 +112,6 @@ class _CameraScreenState extends State<CameraScreen> {
               child: Icon(Icons.photo_library),
             ),
     );
-
   }
 
   Future<void> _takePicture() async {
@@ -87,7 +125,6 @@ class _CameraScreenState extends State<CameraScreen> {
         setState(() {
           _isPictureTaken = true;
         });
-        // Removed await keyword to prevent UI freeze
         Navigator.push(
           context,
           MaterialPageRoute(
@@ -99,6 +136,12 @@ class _CameraScreenState extends State<CameraScreen> {
                   _isPictureTaken = false;
                   _initializeCamera();
                 });
+              },
+              onComplete: (extractedText) {
+                _showProcessingSnackbar();
+                Navigator.pop(context); // Navigate back to CameraScreen
+                Navigator.pop(context); // Navigate back to HomeScreen
+                _resetCamera();
               },
             ),
           ),
