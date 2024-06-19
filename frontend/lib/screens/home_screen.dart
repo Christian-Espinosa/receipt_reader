@@ -3,6 +3,7 @@ import 'package:fl_chart/fl_chart.dart';
 import '../services/database_service.dart';
 import 'camera_screen.dart';
 
+
 class HomeScreen extends StatefulWidget {
   @override
   _HomeScreenState createState() => _HomeScreenState();
@@ -37,7 +38,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     x: expense['name'].hashCode,
                     barRods: [
                       BarChartRodData(
-                        toY: expense['price'].toDouble(),
+                        toY: expense['price'],
                         color: Colors.blue,
                       ),
                     ],

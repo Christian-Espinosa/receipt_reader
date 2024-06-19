@@ -1,6 +1,9 @@
+// lib/screens/picture_review_screen.dart
+
 import 'dart:io';
 import 'package:flutter/material.dart';
-import '../services/image_service.dart';
+import 'package:path_provider/path_provider.dart';
+import 'package:path/path.dart' as path;
 import '../services/ocr_service.dart';
 import '../services/database_service.dart';
 
@@ -11,48 +14,47 @@ class PictureScreen extends StatelessWidget {
 
   PictureScreen({required this.imageFile, required this.onRetake, required this.onComplete});
 
-  final ImageService _imageService = ImageService();
   final OcrService _ocrService = OcrService();
   final DatabaseService _databaseService = DatabaseService();
 
-  Future<String> receiveImage() async {
+  Future<void> receiveImage(BuildContext context) async {
     try {
-      final savedImage = await _imageService.saveImage(imageFile);
-      await _imageService.sendImageToServer(savedImage);
-      final items = await _ocrService.applyOCR(savedImage);
+      final directory = await getApplicationDocumentsDirectory();
+      final String newPath = path.join(directory.path, 'img_receipts');
+      final newDirectory = Directory(newPath);
 
+      if (!await newDirectory.exists()) {
+        await newDirectory.create();
+        print('Directory created at $newPath');
+      }
+
+      final String newImagePath = path.join(newPath, path.basename(imageFile.path));
+      final savedImage = await imageFile.copy(newImagePath);
+
+      print('Image saved to $newImagePath');
+
+      // Apply OCR in the background and save to database
+      final Map<String, double> items = await _ocrService.applyOCR(savedImage);
       for (var item in items.entries) {
         await _databaseService.insertExpense(item.key, item.value);
       }
 
-      return items.entries.map((e) => '${e.key}: \$${e.value}').join('\n');
-    } catch (e) {
-      print('Failed to process image: $e');
-      return 'Failed to process image';
-    }
-  }
+      final extractedText = items.entries.map((e) => '${e.key}: \$${e.value}').join('\n');
+      onComplete(extractedText);
 
-  void _showExtractedText(BuildContext context, String text) {
-    showDialog(
-      context: context,
-      builder: (BuildContext context) {
-        return AlertDialog(
-          title: Text('Extracted Text'),
-          content: SingleChildScrollView(
-            child: Text(text),
-          ),
-          actions: <Widget>[
-            TextButton(
-              child: Text('OK'),
-              onPressed: () {
-                Navigator.of(context).pop();
-                onComplete(text); // Call onComplete callback
-              },
-            ),
-          ],
-        );
-      },
-    );
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text('Processing data...'),
+          duration: Duration(seconds: 2),
+        ),
+      );
+
+      // Ensure sequential navigation
+      await Navigator.maybePop(context);
+      await Navigator.maybePop(context);
+    } catch (e) {
+      print('Failed to save image: $e');
+    }
   }
 
   @override
@@ -72,8 +74,7 @@ class PictureScreen extends StatelessWidget {
           ),
           FloatingActionButton(
             onPressed: () async {
-              String extractedText = await receiveImage();
-              _showExtractedText(context, extractedText);
+              await receiveImage(context);
             },
             tooltip: 'Accept Picture',
             child: Icon(Icons.check),

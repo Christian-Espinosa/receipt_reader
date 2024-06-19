@@ -1,3 +1,5 @@
+// lib/screens/camera_screen.dart
+
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
@@ -54,10 +56,10 @@ class _CameraScreenState extends State<CameraScreen> {
                 _initializeCamera();
               });
             },
-            onComplete: (extractedText) {
+            onComplete: (extractedText) async {
               _showProcessingSnackbar();
-              Navigator.pop(context); // Navigate back to CameraScreen
-              Navigator.pop(context); // Navigate back to HomeScreen
+              await Navigator.maybePop(context); // Navigate back to CameraScreen
+              await Navigator.maybePop(context); // Navigate back to HomeScreen
               _resetCamera();
             },
           ),
@@ -137,10 +139,10 @@ class _CameraScreenState extends State<CameraScreen> {
                   _initializeCamera();
                 });
               },
-              onComplete: (extractedText) {
+              onComplete: (extractedText) async {
                 _showProcessingSnackbar();
-                Navigator.pop(context); // Navigate back to CameraScreen
-                Navigator.pop(context); // Navigate back to HomeScreen
+                await Navigator.maybePop(context); // Navigate back to CameraScreen
+                await Navigator.maybePop(context); // Navigate back to HomeScreen
                 _resetCamera();
               },
             ),

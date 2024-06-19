@@ -1,5 +1,6 @@
 import 'dart:io';
 import 'package:google_mlkit_text_recognition/google_mlkit_text_recognition.dart';
+import '../models/receipt_item.dart';
 
 class OcrService {
   Future<Map<String, double>> applyOCR(File imageFile) async {
