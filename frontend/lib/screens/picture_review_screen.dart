@@ -34,14 +34,14 @@ class PictureScreen extends StatelessWidget {
       print('Image saved to $newImagePath');
 
       // Apply OCR in the background and save to database
-      final Map<String, double> items = await _ocrService.applyOCR(savedImage);
+      /*final Map<String, double> items = await _ocrService.applyOCR(savedImage);
       for (var item in items.entries) {
         await _databaseService.insertExpense(item.key, item.value);
       }
 
       final extractedText = items.entries.map((e) => '${e.key}: \$${e.value}').join('\n');
-      onComplete(extractedText);
-
+      onComplete(extractedText);*/
+      final Map<String, dynamic> json = await _ocrService.applyOCR(savedImage);
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
           content: Text('Processing data...'),

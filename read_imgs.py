@@ -163,7 +163,7 @@ def main():
             show_one_image(processed_images[0])
         elif option == "3":
             print(pytesseract.get_tesseract_version())
-            image = Image.open(paths.processed_img_path + "\\p_image_1.png")
+            image = Image.open(paths.processed_img_path + "\\2.png")
             text = pytesseract.image_to_string(image)
             print(text)
             with open(paths.text_path + "p_image_1.txt", "w", encoding='utf-8') as file:

@@ -1,0 +1,18 @@
+dict_keys(['merchant_name', 'merchant_address', 'merchant_phone', 'merchant_website', 'merchant_tax_reg_no', 'merchant_company_reg_no', 'region', 'mall', 'country', 'receipt_no', 'date', 'time', 'items', 'currency', 'total', 'subtotal', 'tax', 'service_charge', 'tip', 'payment_method', 'payment_details', 'credit_card_type', 'credit_card_number', 'ocr_text', 'ocr_confidence', 'width', 'height', 'avg_char_width', 'avg_line_height', 'conf_amount', 'source_locations'])
+Your purchase at MERCADONA, S.A.
+DescripcióP. Unit Imp.(€) - EUR 8.0
+1 TONYINA OLIVA - EUR 2.64
+KEFIR1,30 - EUR 2.6
+FLOCS DE CIVADA - EUR 0.9
+MORA - EUR 1.99
+GERDS 170 GR - EUR 2.52
+CACAU PUR 0% - EUR 2.9
+TOTAL (€) - EUR 21.55
+STARGETA BANCARIA - EUR 21.55
+0%7,15 - EUR 0.0
+10%13,09 - EUR 1.31
+------------------------------
+Subtotal: None
+Tax: None
+------------------------------
+Total: 1.31
