@@ -1,6 +1,0 @@
-{ocr_type: 
-receipts, 
-request_id: 
-P_176.84.227.227_lxnpfob5_5sb, 
-ref_no: ocr_flutter_123, 
-file_name: 1000044834.jpg, request_received_on: 1718914706897, success: true, image_width: 2088, image_height: 4640, image_rotation: 0.021, recognition_completed_on: 1718914710175, receipts: [{merchant_name: MERCADONA, S.A., merchant_address: null, merchant_phone: null, merchant_website: null, merchant_tax_reg_no: null, merchant_company_reg_no: null, region: null, mall: null, country: ES, receipt_no: 2783-015-112278, date: 2024-06-19, time: 19:47, items: [{amount: 8.0, category: null, description: TONYINA OLIVA, flags: , qty: 1, remarks: null, tags: null, unitPrice: null}, {amount: 2.64, category: null, description: MADUIXA, flags: , qty: 1, remarks: null, tags: null, unitPrice: null}, {amount: 2.6, category: null, description: KEFIR1,30, flags: , qty: 2, remarks: null, tags: null, unitPrice: null}, {amount: 0.9, category: null, description: FLOCS DE CIVADA, flags: , qty: 1, remarks: null, tags: null, unitPrice: null}
