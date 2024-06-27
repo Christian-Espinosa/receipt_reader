@@ -1,0 +1,207 @@
+{
+  "ocr_type": "receipts",
+  "request_id": "P_176.84.227.227_lxnrmwdi_qem",
+  "ref_no": "oct_python_123",
+  "file_name": "receipt1.jpeg",
+  "request_received_on": 1718918403174,
+  "success": true,
+  "image_width": 921,
+  "image_height": 2048,
+  "image_rotation": 0.03,
+  "recognition_completed_on": 1718918403591,
+  "receipts": [
+    {
+      "merchant_name": "MERCADONA, S.A.",
+      "merchant_address": null,
+      "merchant_phone": null,
+      "merchant_website": null,
+      "merchant_tax_reg_no": null,
+      "merchant_company_reg_no": null,
+      "region": null,
+      "mall": null,
+      "country": "IT",
+      "receipt_no": "2783-015-112278",
+      "date": "2024-06-19",
+      "time": "19:47",
+      "items": [
+        {
+          "amount": 8.0,
+          "category": null,
+          "description": "DescripcióP. Unit Imp.(€)",
+          "flags": "",
+          "qty": null,
+          "remarks": null,
+          "tags": null,
+          "unitPrice": null
+        },
+        {
+          "amount": 2.64,
+          "category": null,
+          "description": "1 TONYINA OLIVA",
+          "flags": "",
+          "qty": null,
+          "remarks": null,
+          "tags": null,
+          "unitPrice": null
+        },
+        {
+          "amount": 2.6,
+          "category": null,
+          "description": "KEFIR1,30",
+          "flags": "",
+          "qty": 2,
+          "remarks": null,
+          "tags": null,
+          "unitPrice": null
+        },
+        {
+          "amount": 0.9,
+          "category": null,
+          "description": "FLOCS DE CIVADA",
+          "flags": "",
+          "qty": 1,
+          "remarks": null,
+          "tags": null,
+          "unitPrice": null
+        },
+        {
+          "amount": 1.99,
+          "category": null,
+          "description": "MORA",
+          "flags": "",
+          "qty": 1,
+          "remarks": null,
+          "tags": null,
+          "unitPrice": null
+        },
+        {
+          "amount": 2.52,
+          "category": null,
+          "description": "GERDS 170 GR",
+          "flags": "",
+          "qty": 1,
+          "remarks": null,
+          "tags": null,
+          "unitPrice": null
+        },
+        {
+          "amount": 2.9,
+          "category": null,
+          "description": "CACAU PUR 0%",
+          "flags": "",
+          "qty": 1,
+          "remarks": null,
+          "tags": null,
+          "unitPrice": null
+        },
+        {
+          "amount": 21.55,
+          "category": null,
+          "description": "TOTAL (€)",
+          "flags": "",
+          "qty": null,
+          "remarks": null,
+          "tags": null,
+          "unitPrice": null
+        },
+        {
+          "amount": 21.55,
+          "category": null,
+          "description": "STARGETA BANCARIA",
+          "flags": "",
+          "qty": null,
+          "remarks": null,
+          "tags": null,
+          "unitPrice": null
+        },
+        {
+          "amount": 0.0,
+          "category": null,
+          "description": "0%7,15",
+          "flags": "",
+          "qty": null,
+          "remarks": null,
+          "tags": null,
+          "unitPrice": null
+        },
+        {
+          "amount": 1.31,
+          "category": null,
+          "description": "10%13,09",
+          "flags": "",
+          "qty": null,
+          "remarks": null,
+          "tags": null,
+          "unitPrice": null
+        }
+      ],
+      "currency": "EUR",
+      "total": 1.31,
+      "subtotal": null,
+      "tax": null,
+      "service_charge": null,
+      "tip": null,
+      "payment_method": null,
+      "payment_details": null,
+      "credit_card_type": null,
+      "credit_card_number": "1947",
+      "ocr_text": "      MERCADONA, S.A.\n               A-46103834\n TEUDIT\n         C/RAMBLA DEL CELLER 29\n       08190 SANT CUGAT DEL VALLES\n JATI TELEFON: 935893582\n        19/06/2024 19:47 OP: 0751311\n   FACTURA SIMPLIFICADA: 2783-015-112278\n      Descripció          P. Unit Imp.(€)\n                                      8,00\n    1 TONYINA OLIVA\n                                      2,64\n    1 MADUIXA\n    2 KEFIR                  1,30     2,60\n    1 FLOCS DE CIVADA                 0,90\n    1 MORA                            1,99\n    1 GERDS 170 GR                    2,52\n    1 CACAU PUR 0%                    2,90\n                     TOTAL (€)       21,55\n            STARGETA BANCARIA        21,55\n IVA     BASE IMPOSABLE () QUOTA ()\n 0%             7,15              0,00\n 10%           13,09               1,31\n TOTAL         20,24 T AVOGA 1,31 ГАИО\n TARG. BANCARIA:**** **** **** 1947\n N.C: 072088636                AUT: 780746\n AID: A0000000031010              ARC: 3030\n VISA CREDITO/DEB                     ΠΟ\n Import: 21,55 CaixaBank\n                                   toupil",
+      "ocr_confidence": 95.67,
+      "width": 789,
+      "height": 1754,
+      "avg_char_width": 18.32,
+      "avg_line_height": 37.418,
+      "conf_amount": 83,
+      "source_locations": {
+        "date": [
+          [
+            {"x": 196, "y": 522},
+            {"x": 505, "y": 531},
+            {"x": 503, "y": 579},
+            {"x": 194, "y": 570}
+          ]
+        ],
+        "total": [
+          [
+            {"x": 293, "y": 1563},
+            {"x": 767, "y": 1581},
+            {"x": 765, "y": 1634},
+            {"x": 291, "y": 1616}
+          ]
+        ],
+        "receipt_no": [
+          [
+            {"x": 492, "y": 568},
+            {"x": 778, "y": 569},
+            {"x": 777, "y": 615},
+            {"x": 491, "y": 614}
+          ]
+        ],
+        "credit_card_number": [
+          [
+            {"x": 10, "y": 1647},
+            {"x": 744, "y": 1682},
+            {"x": 742, "y": 1730},
+            {"x": 8, "y": 1696}
+          ]
+        ],
+        "merchant_name": [
+          [
+            {"x": 171, "y": 270},
+            {"x": 733, "y": 287},
+            {"x": 732, "y": 331},
+            {"x": 170, "y": 314}
+          ]
+        ],
+        "doc": [
+          [
+            {"x": 45, "y": 175},
+            {"x": 913, "y": 201},
+            {"x": 856, "y": 2130},
+            {"x": -11, "y": 2105}
+          ]
+        ]
+      }
+    }
+  ]
+}

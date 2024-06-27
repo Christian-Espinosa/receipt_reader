@@ -1,0 +1,18 @@
+dict_keys(['merchant_name', 'merchant_address', 'merchant_phone', 'merchant_website', 'merchant_tax_reg_no', 'merchant_company_reg_no', 'region', 'mall', 'country', 'receipt_no', 'date', 'time', 'items', 'currency', 'total', 'subtotal', 'tax', 'service_charge', 'tip', 'payment_method', 'payment_details', 'credit_card_type', 'credit_card_number', 'ocr_text', 'ocr_confidence', 'width', 'height', 'avg_char_width', 'avg_line_height', 'conf_amount', 'source_locations'])
+Your purchase at MERCADONA, S.A.
+BRONCHALES 6L1,23 - EUR 2.46
+TONYINA OLIVA - EUR 7.8
+XAMPINYÓ GRAN - EUR 1.45
+CANSALADA SOBRES - EUR 2.29
+C. AMARILLA BANDEJA - EUR 1.36
+PA DE SEGOL 51 % - EUR 1.55
+12 OUS PAGÈS - EUR 2.69
+TOTAL (€) - EUR 19.6
+TARGETA BANCARIA - EUR 19.6
+0%5,50 - EUR 0.0
+10%12,82 - EUR 1.28
+------------------------------
+Subtotal: None
+Tax: None
+------------------------------
+Total: 1.28

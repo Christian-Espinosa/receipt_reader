@@ -1,0 +1,26 @@
+dict_keys(['merchant_name', 'merchant_address', 'merchant_phone', 'merchant_website', 'merchant_tax_reg_no', 'merchant_company_reg_no', 'region', 'mall', 'country', 'receipt_no', 'date', 'time', 'items', 'currency', 'total', 'subtotal', 'tax', 'service_charge', 'tip', 'payment_method', 'payment_details', 'credit_card_type', 'credit_card_number', 'ocr_text', 'ocr_confidence', 'width', 'height', 'avg_char_width', 'avg_line_height', 'conf_amount', 'source_locations'])
+Your purchase at MERCADONA, S.A.
+CAQUI MADURO - EUR 2.36
+CAQUI MADURO - EUR 2.32
+KIWI VERD SAFATA - EUR 3.06
+NYOQUIS DE PATATA - EUR 1.12
+CORS CABDELLS - EUR 1.88
++ PROTEINAS FLAM - EUR 2.0
+KEFIR - EUR 1.4
+PIT FAM - EUR 5.92
+FORMATGE RATLLAT POL - EUR 1.64
+BOLET SHIITAKE - EUR 3.65
+CACAUET XOCOLATA - EUR 1.85
+kg1,79 €/kg - EUR 2.16
+kg 3,39 €/kg - EUR 2.45
+kg 1,95 €/kg - EUR 1.54
+TOTAL (€) - EUR 33.35
+TARGETA BANCARIA - EUR 33.35
+0%21,06 - EUR 0.0
+5%1,07 - EUR 0.05
+10%10,15 - EUR 1.02
+------------------------------
+Subtotal: None
+Tax: None
+------------------------------
+Total: 1.07

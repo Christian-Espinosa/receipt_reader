@@ -1,0 +1,21 @@
+dict_keys(['merchant_name', 'merchant_address', 'merchant_phone', 'merchant_website', 'merchant_tax_reg_no', 'merchant_company_reg_no', 'region', 'mall', 'country', 'receipt_no', 'date', 'time', 'items', 'currency', 'total', 'subtotal', 'tax', 'service_charge', 'tip', 'payment_method', 'payment_details', 'credit_card_type', 'credit_card_number', 'ocr_text', 'ocr_confidence', 'width', 'height', 'avg_char_width', 'avg_line_height', 'conf_amount', 'source_locations'])
+Your purchase at MERCADONA, S.A.
+BRONCHALES 6L - EUR 1.23
+CEBA TUB - EUR 1.85
+LINGUINE - EUR 0.76
+CORS CABDELLS - EUR 1.98
+IOGURT NATURAL X 6 - EUR 1.05
+EMPANADA TONYINA - EUR 3.9
+KEFIR - EUR 1.4
+CAMAGROC - EUR 4.68
+ROVELLÓ - EUR 5.16
+TOTAL - EUR 22.01
+TARGETA BANCARIA - EUR 22.01
+0%13,67 - EUR 0.0
+5%0,72 - EUR 0.04
+10%6,89 - EUR 0.69
+------------------------------
+Subtotal: None
+Tax: None
+------------------------------
+Total: 0.73

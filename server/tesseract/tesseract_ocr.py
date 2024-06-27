@@ -3,6 +3,7 @@ import cv2
 import matplotlib.pyplot as plt
 import pytesseract
 import re
+import json
 
 from pytesseract import Output
 
@@ -14,7 +15,7 @@ def plot_rgb(image):
     plt.figure(figsize=(16,10))
     return plt.imshow(cv2.cvtColor(image, cv2.COLOR_BGR2RGB))
 
-def tesseract(image, save_path=None):
+def tesseract(image, save_path=None, feedback_path=None):
     d = pytesseract.image_to_data(image, output_type=Output.DICT)
     n_boxes = len(d['level'])
     boxes = cv2.cvtColor(image.copy(), cv2.COLOR_BGR2RGB)
@@ -30,5 +31,15 @@ def tesseract(image, save_path=None):
         with open(save_path, 'w') as text_file:
             text_file.write(extracted_text)
 
-    
-
+    if feedback_path:
+        with open(feedback_path, 'r') as file:
+            feedback = json.load(file)
+        
+        feedback.append({
+            'image': image_path,  # Path or identifier of the image
+            'extracted_text': extracted_text,
+            'correct_text_': ''  
+        })
+        
+        with open(feedback_path, 'w') as file:
+            json.dump(feedback, file)

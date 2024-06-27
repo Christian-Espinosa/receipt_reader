@@ -1,0 +1,18 @@
+dict_keys(['merchant_name', 'merchant_address', 'merchant_phone', 'merchant_website', 'merchant_tax_reg_no', 'merchant_company_reg_no', 'region', 'mall', 'country', 'receipt_no', 'date', 'time', 'items', 'currency', 'total', 'subtotal', 'tax', 'service_charge', 'tip', 'payment_method', 'payment_details', 'credit_card_type', 'credit_card_number', 'ocr_text', 'ocr_confidence', 'width', 'height', 'avg_char_width', 'avg_line_height', 'conf_amount', 'source_locations'])
+Your purchase at MERCADONA
+FLOCS DE CIVADA - EUR 0.95
+TOMÀQUET TRITURAT 0,70 - EUR 1.4
+AMANIDA PRIMAVERA - EUR 0.96
+BRONCHALES 6L1,23 - EUR 2.46
+RAIM VERMELL LLAVORS - EUR 2.31
+PIT FAM - EUR 6.86
+kg 1,79 €/kg - EUR 0.86
+TOTAL - EUR 15.8
+TARGETA BANCARIA - EUR 15.8
+0%4,13 - EUR 0.0
+10%10,61 - EUR 1.06
+------------------------------
+Subtotal: None
+Tax: None
+------------------------------
+Total: 1.06

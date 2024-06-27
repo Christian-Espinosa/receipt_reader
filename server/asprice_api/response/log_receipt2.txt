@@ -1,0 +1,15 @@
+dict_keys(['merchant_name', 'merchant_address', 'merchant_phone', 'merchant_website', 'merchant_tax_reg_no', 'merchant_company_reg_no', 'region', 'mall', 'country', 'receipt_no', 'date', 'time', 'items', 'currency', 'total', 'subtotal', 'tax', 'service_charge', 'tip', 'payment_method', 'payment_details', 'credit_card_type', 'credit_card_number', 'ocr_text', 'ocr_confidence', 'width', 'height', 'avg_char_width', 'avg_line_height', 'conf_amount', 'source_locations'])
+Your purchase at MERCADONA, S.A.
+GERDS 170 GR - EUR 2.35
+KÉFIR - EUR 1.3
+PINYA PELADA NATURAL - EUR 3.34
+kg 3,39 €/kg - EUR 1.73
+TOTAL (€) - EUR 8.72
+TARGETA BANCARIA - EUR 8.72
+0%7,42 - EUR 0.0
+10%1,18 - EUR 0.12
+------------------------------
+Subtotal: None
+Tax: None
+------------------------------
+Total: 0.12

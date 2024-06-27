@@ -165,17 +165,17 @@ def apply_processing(path_image, save_path):
     
     # All contours
     contours, _ = cv2.findContours(edged, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
-    image_with_contours = cv2.drawContours(image.copy(), contours, -1, (0, 255, 0), 3)
+    image_with_contours = cv2.drawContours(image.copy(), contours, -1, (0, 255, 0), 4)
 
     # Get the largest contour
     receipt_contour = get_receipt_contour(contours)
-    image_with_contour = cv2.drawContours(image.copy(), [receipt_contour], -1, (0, 255, 0), 2)
+    image_with_contour = cv2.drawContours(image.copy(), [receipt_contour], -1, (0, 255, 0), 4)
     
     # Crop the receipt
     bounding_rect_contour = contour_to_rect(original, receipt_contour)
     if bounding_rect_contour is not None:
-        image_with_contour_and_rect = cv2.drawContours(image.copy(), [receipt_contour], -1, (0, 255, 0), 2)
-        image_with_contour_and_rect = cv2.drawContours(image_with_contour_and_rect, [bounding_rect_contour], -1, (255, 0, 255), 2)
+        image_with_contour_and_rect = cv2.drawContours(image.copy(), [receipt_contour], -1, (0, 255, 0), 4)
+        image_with_contour_and_rect = cv2.drawContours(image_with_contour_and_rect, [bounding_rect_contour], -1, (255, 0, 255), 4)
         # Using cv2.boundingRect to get the correct coordinates
         x, y, w, h = cv2.boundingRect(receipt_contour)
         scanned = image[y:y+h, x:x+w]
