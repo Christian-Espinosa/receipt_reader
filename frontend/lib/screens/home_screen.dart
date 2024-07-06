@@ -1,105 +1,108 @@
 import 'package:flutter/material.dart';
 import 'package:fl_chart/fl_chart.dart';
-import '../services/database_service.dart';
-import 'camera_screen.dart';
+import 'package:intl/intl.dart';
 
-
-class HomeScreen extends StatefulWidget {
-  @override
-  _HomeScreenState createState() => _HomeScreenState();
-}
-
-class _HomeScreenState extends State<HomeScreen> {
-  final DatabaseService _databaseService = DatabaseService();
-
+class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Home'),
+        title: Text('Home Screen'),
       ),
-      body: Column(
-        children: [
-          Expanded(
-            child: FutureBuilder<List<Map<String, dynamic>>>(
-              future: _databaseService.getExpenses(),
-              builder: (context, snapshot) {
-                if (snapshot.connectionState == ConnectionState.waiting) {
-                  return Center(child: CircularProgressIndicator());
-                } else if (snapshot.hasError) {
-                  return Center(child: Text('Error: ${snapshot.error}'));
-                } else if (!snapshot.hasData || snapshot.data!.isEmpty) {
-                  return Center(child: Text('No data available'));
-                }
+      body: Center(
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: LineChartWidget(),
+        ),
+      ),
+    );
+  }
+}
 
-                final data = snapshot.data!;
-                final barGroups = data.map((expense) {
-                  return BarChartGroupData(
-                    x: expense['name'].hashCode,
-                    barRods: [
-                      BarChartRodData(
-                        toY: expense['price'],
-                        color: Colors.blue,
-                      ),
-                    ],
-                  );
-                }).toList();
+class LineChartWidget extends StatelessWidget {
+  final List<DateTime> dates = [
+    DateTime(2024, 6, 19),
+    DateTime(2024, 6, 5),
+    DateTime(2023, 11, 10),
+    DateTime(2023, 11, 15),
+    DateTime(2023, 9, 20),
+    DateTime(2023, 11, 7),
+  ];
 
-                return Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: BarChart(
-                    BarChartData(
-                      barGroups: barGroups,
-                      titlesData: FlTitlesData(
-                        bottomTitles: AxisTitles(
-                          sideTitles: SideTitles(
-                            showTitles: true,
-                            getTitlesWidget: (value, meta) {
-                              final expense = data.firstWhere(
-                                (expense) => expense['name'].hashCode == value.toInt(),
-                                orElse: () => {'name': ''},
-                              );
-                              return Padding(
-                                padding: const EdgeInsets.only(top: 8.0),
-                                child: Text(expense['name']),
-                              );
-                            },
-                          ),
-                        ),
-                        leftTitles: AxisTitles(
-                          sideTitles: SideTitles(
-                            showTitles: true,
-                            getTitlesWidget: (value, meta) {
-                              return Text(value.toString());
-                            },
-                          ),
-                        ),
-                      ),
-                      borderData: FlBorderData(
-                        show: true,
-                        border: Border.all(color: Colors.black, width: 1),
-                      ),
+  final List<double> values = [
+    21.55,
+    8.72,
+    33.35,
+    22.01,
+    15.80,
+    19.60,
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      height: 300,
+      child: LineChart(
+        LineChartData(
+          borderData: FlBorderData(
+            show: true,
+            border: Border.all(color: Colors.black, width: 1),
+          ),
+          titlesData: FlTitlesData(
+            bottomTitles: AxisTitles(
+              sideTitles: SideTitles(
+                showTitles: true,
+                interval: 1,
+                getTitlesWidget: (value, meta) {
+                  final index = value.toInt();
+                  if (index < 0 || index >= dates.length) {
+                    return const SizedBox.shrink();
+                  }
+                  final date = dates[index];
+                  return SideTitleWidget(
+                    axisSide: meta.axisSide,
+                    space: 4.0,
+                    child: Text(
+                      DateFormat('dd/MM/yyyy').format(date),
+                      style: TextStyle(fontSize: 10),
                     ),
-                  ),
-                );
-              },
+                  );
+                },
+                reservedSize: 40,
+              ),
+            ),
+            leftTitles: AxisTitles(
+              sideTitles: SideTitles(
+                showTitles: true,
+                interval: 10,
+                getTitlesWidget: (value, meta) {
+                  return Text(
+                    value.toString(),
+                    style: const TextStyle(
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 12,
+                    ),
+                  );
+                },
+                reservedSize: 40,
+              ),
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => CameraScreen(),
-                  ),
-                );
-              },
-              child: Text('Add New Receipt'),
+          lineBarsData: [
+            LineChartBarData(
+              spots: List.generate(dates.length, (index) {
+                return FlSpot(index.toDouble(), values[index]);
+              }),
+              isCurved: true,
+              color: Colors.blue,
+              barWidth: 4,
+              belowBarData: BarAreaData(show: false),
+              dotData: FlDotData(show: true),
             ),
-          ),
-        ],
+          ],
+          gridData: FlGridData(show: true),
+        ),
       ),
     );
   }

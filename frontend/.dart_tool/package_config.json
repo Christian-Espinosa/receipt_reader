@@ -44,6 +44,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "clock",
+      "rootUri": "file:///C:/Users/christian.espinosa/AppData/Local/Pub/Cache/hosted/pub.dev/clock-1.1.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "collection",
       "rootUri": "file:///C:/Users/christian.espinosa/AppData/Local/Pub/Cache/hosted/pub.dev/collection-1.18.0",
       "packageUri": "lib/",
@@ -186,6 +192,12 @@
       "rootUri": "file:///C:/Users/christian.espinosa/AppData/Local/Pub/Cache/hosted/pub.dev/image_picker_windows-0.2.1+1",
       "packageUri": "lib/",
       "languageVersion": "2.19"
+    },
+    {
+      "name": "intl",
+      "rootUri": "file:///C:/Users/christian.espinosa/AppData/Local/Pub/Cache/hosted/pub.dev/intl-0.17.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
     },
     {
       "name": "material_color_utilities",
@@ -344,7 +356,7 @@
       "languageVersion": "2.17"
     }
   ],
-  "generated": "2024-06-19T15:02:22.441773Z",
+  "generated": "2024-07-03T18:05:00.308039Z",
   "generator": "pub",
   "generatorVersion": "3.4.3",
   "flutterRoot": "file:///C:/Users/christian.espinosa/Documents/UNIR/TFM/sdk/flutter",
